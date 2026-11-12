@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ef">
+  <meta name="description" content="Paris 127 — химчистка и прачечная в Алматы. Бережный уход за одеждой, шторами, меховыми изделиями и домашним текстилем.">
+  <title>Paris 127 — химчистка и прачечная в Алматы</title>
+  <style>
+    :root {
+      --paper: #f7f4ef;
+      --white: #fffefa;
+      --ink: #202b29;
+      --muted: #69726e;
+      --line: #e6e2da;
+      --green: #203f39;
+      --green-light: #e7eeea;
+      --rose: #a84d4a;
+      --rose-light: #f2e5e1;
+      --sand: #ede6da;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header {
+      border-bottom: 1px solid rgba(32, 43, 41, .08);
+      background: rgba(247, 244, 239, .92);
+    }
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      flex: 0 0 auto;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(32, 63, 57, .45);
+      border-radius: 50%;
+      color: var(--green);
+      font: 18px var(--serif);
+      letter-spacing: -.08em;
+    }
+    .brand-name { font: 22px var(--serif); letter-spacing: .06em; }
+    .brand-sub { display: block; margin-top: 2px; color: var(--muted); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+    .nav { display: flex; align-items: center; gap: 30px; }
+    .nav a { text-decoration: none; font-size: 13px; color: #4b5753; transition: color .2s; }
+    .nav a:hover, .footer-links a:hover { color: var(--rose); }
+    .header-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+    .phone-icon { width: 17px; height: 17px; }
+
+    .hero { padding: 62px 0 86px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(32px, 6vw, 82px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--rose);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 580px;
+      margin: 20px 0 19px;
+      font: 500 clamp(43px, 5.1vw, 66px)/1.06 var(--serif);
+      letter-spacing: -.045em;
+    }
+    h1 em { color: var(--rose); font-weight: 400; }
+    .hero-copy {
+      max-width: 490px;
+      margin-bottom: 27px;
+      color: #5e6864;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 650;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--green); color: white; }
+    .button-primary:hover { background: #294d45; }
+    .button-secondary { border-color: #d7d1c8; color: var(--ink); background: transparent; }
+    .button-secondary:hover { border-color: var(--green); }
+    .button svg { width: 17px; height: 17px; flex: 0 0 auto; }
+    .hero-note { margin-top: 24px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; }
+    .hero-note svg { width: 17px; height: 17px; color: var(--green); }
+
+    .hero-art {
+      position: relative;
+      min-width: 0;
+      isolation: isolate;
+    }
+    .hero-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .art-note {
+      position: absolute;
+      right: -13px;
+      bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 18px;
+      border: 1px solid rgba(32, 43, 41, .07);
+      border-radius: 4px;
+      background: var(--white);
+      box-shadow: 0 14px 36px rgba(48, 46, 39, .08);
+    }
+    .art-note-icon {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      border-radius: 50%; background: var(--rose-light); color: var(--rose);
+    }
+    .art-note-icon svg { width: 19px; height: 19px; }
+    .art-note strong { display: block; font: 16px var(--serif); }
+    .art-note span:last-child { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; letter-spacing: .05em; }
+
+    .services { padding: 86px 0 92px; background: #fffefa; }
+    .section-top { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 34px; }
+    .section-top h2, .steps-heading h2 {
+      max-width: 610px; margin: 13px 0 0; font: 500 clamp(34px, 4vw, 48px)/1.12 var(--serif); letter-spacing: -.035em;
+    }
+    .section-intro { max-width: 350px; margin: 0 0 4px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service-card {
+      min-height: 196px;
+      padding: 26px 27px 24px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background .2s;
+    }
+    .service-card:hover { background: #fbf8f2; }
+    .service-icon {
+      width: 42px; height: 42px; display: grid; place-items: center;
+      margin-bottom: 19px; border-radius: 50%;
+      color: var(--green); background: var(--green-light);
+    }
+    .service-icon svg { width: 21px; height: 21px; }
+    .service-card:nth-child(3n + 2) .service-icon { color: var(--rose); background: var(--rose-light); }
+    .service-card h3 { margin-bottom: 8px; font: 20px var(--serif); }
+    .service-card p { max-width: 285px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+    .care { padding: 82px 0; }
+    .care-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 70px; align-items: start; }
+    .care-heading h2 { margin: 14px 0 13px; font: 500 clamp(34px, 3.7vw, 46px)/1.12 var(--serif); letter-spacing: -.035em; }
+    .care-heading p { max-width: 355px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .care-list { border-top: 1px solid #ded9d0; }
+    .care-row { display: grid; grid-template-columns: 55px 1fr; gap: 14px; padding: 19px 0; border-bottom: 1px solid #ded9d0; }
+    .care-num { padding-top: 3px; color: var(--rose); font: 17px var(--serif); }
+    .care-row strong { display: block; margin-bottom: 5px; font: 19px var(--serif); font-weight: 500; }
+    .care-row p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    .contact-band { padding: 0 0 78px; }
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 43px 50px;
+      background: var(--green);
+      color: white;
+    }
+    .contact-panel::after {
+      content: "";
+      position: absolute;
+      width: 280px; height: 280px; right: 22%; top: -180px;
+      border: 1px solid rgba(255,255,255,.12); border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(255,255,255,.025), 0 0 0 48px rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+    .contact-text { position: relative; z-index: 1; }
+    .contact-text .eyebrow { color: #d9b8ad; }
+    .contact-text h2 { max-width: 560px; margin: 12px 0 8px; font: 500 clamp(30px, 3.5vw, 42px)/1.12 var(--serif); letter-spacing: -.03em; }
+    .contact-text p { margin: 0; color: rgba(255,255,255,.72); font-size: 13px; }
+    .contact-panel .button { position: relative; z-index: 1; flex: 0 0 auto; background: #f6efe4; color: var(--green); }
+    .contact-panel .button:hover { background: #fffefa; }
+
+    .site-footer { padding: 30px 0 28px; border-top: 1px solid rgba(32, 43, 41, .1); }
+    .footer-main { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; }
+    .footer-brand p { margin: 11px 0 0; color: var(--muted); font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; color: #4b5753; font-size: 12px; }
+    .footer-links a { text-decoration: none; }
+    .legal { margin-top: 26px; padding-top: 17px; border-top: 1px solid var(--line); color: #68716d; font-size: 12px; line-height: 1.8; }
+    .legal strong { color: var(--ink); font-weight: 650; }
+    .copyright { margin-top: 14px; color: #8a918d; font-size: 10px; letter-spacing: .06em; }
+
+    @media (max-width: 900px) {
+      .nav { gap: 17px; }
+      .nav a { font-size: 12px; }
+      .hero { padding-top: 45px; }
+      .hero-grid { gap: 32px; }
+      .care-grid { gap: 40px; }
+      .contact-panel { padding: 36px; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .header-inner { min-height: 70px; }
+      .nav { display: none; }
+      .header-phone { font-size: 13px; }
+      .hero { padding: 43px 0 64px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      h1 { max-width: 550px; font-size: clamp(45px, 12vw, 61px); }
+      .hero-copy { font-size: 15px; }
+      .hero-art { max-width: 540px; margin-inline: auto; }
+      .art-note { right: -5px; bottom: 18px; }
+      .services { padding: 68px 0; }
+      .section-top { display: block; margin-bottom: 26px; }
+      .section-intro { margin-top: 14px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card { min-height: 190px; padding: 21px 18px; }
+      .service-card h3 { font-size: 18px; }
+      .care { padding: 65px 0; }
+      .care-grid { grid-template-columns: 1fr; gap: 28px; }
+      .contact-band { padding-bottom: 60px; }
+      .contact-panel { align-items: flex-start; flex-direction: column; padding: 32px 25px; }
+      .contact-panel .button { min-height: 46px; }
+      .footer-main { flex-direction: column; }
+      .footer-links { gap: 17px; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 30px); }
+      .brand-name { font-size: 20px; }
+      .header-phone { gap: 6px; font-size: 12px; }
+      .phone-icon { width: 15px; height: 15px; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .actions .button { width: 100%; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .art-note { padding: 11px 13px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Paris 127 — на главную">
+        <span class="brand-mark" aria-hidden="true">P.</span>
+        <span><span class="brand-name">PARIS 127</span><span class="brand-sub">химчистка · прачечная</span></span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#services">Услуги</a>
+        <a href="#care">Бережный уход</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="header-phone" href="tel:+77052473327">
+        <svg class="phone-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3.8 9.3 3c.7-.2 1.4.2 1.7.9l1 2.5c.2.6 0 1.2-.4 1.6l-1.4 1.1a14.2 14.2 0 0 0 4.7 4.7l1.1-1.4c.4-.5 1-.6 1.6-.4l2.5 1c.7.3 1.1 1 .9 1.7l-.8 2.7c-.2.7-.9 1.2-1.7 1.2A15.7 15.7 0 0 1 4.8 5.5c0-.8.5-1.5 1.2-1.7Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        +7 705 247 33 27
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Уход за вещами в Алматы</span>
+          <h1>Свежесть, которую <em>чувствуешь.</em></h1>
+          <p class="hero-copy">Химчистка и стирка одежды, меха и домашнего текстиля. Подберём бережный уход для каждой вещи.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://wa.me/77052473327" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.7a8.1 8.1 0 0 1-11.9 7.1L4 20l1.3-4a8.1 8.1 0 1 1 14.7-4.3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.1 8.5c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.6l-.5.6c-.2.1-.2.3-.1.5.5.9 1.2 1.6 2.1 2.1.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.2.4.4v.4c0 .3-.1.5-.4.7-.5.4-1.1.5-1.7.4-1.3-.3-2.7-1.1-3.9-2.3-1.2-1.2-2-2.6-2.3-3.9-.1-.6 0-1.2.4-1.7Z" fill="currentColor"/></svg>
+              Написать в WhatsApp
+            </a>
+            <a class="button button-secondary" href="#services">Посмотреть услуги</a>
+          </div>
+          <div class="hero-note">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 2.4 5.1 5.6.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.6-.8L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            Для повседневных и деликатных вещей
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Иллюстрация аккуратно сложенного чистого белья" role="img">
+          <svg viewBox="0 0 640 550" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eee9e0"/><stop offset="1" stop-color="#e4e5df"/></linearGradient>
+              <linearGradient id="linen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#e9e6df"/></linearGradient>
+              <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c98278"/><stop offset="1" stop-color="#a84d4a"/></linearGradient>
+              <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#514a3d" flood-opacity=".13"/></filter>
+            </defs>
+            <rect x="8" y="8" width="624" height="534" rx="12" fill="url(#bg)"/>
+            <circle cx="391" cy="255" r="192" fill="#edcfc5"/>
+            <circle cx="391" cy="255" r="163" fill="none" stroke="#fff9f1" stroke-opacity=".7"/>
+            <path d="M88 444c86-43 173-61 263-54 82 6 146 32 198 78v74H88v-98Z" fill="#dce5de" opacity=".73"/>
+            <g filter="url(#shadow)">
+              <path d="M134 350c0-19 16-34 35-34h311c20 0 36 15 36 34v94c0 18-16 33-36 33H169c-19 0-35-15-35-33v-94Z" fill="url(#linen)"/>
+              <path d="M164 364c70 14 107 20 160 18 51-2 99-17 166-12v37c-75-7-112 16-169 16-63 0-96-14-157-17v-42Z" fill="#d9e1dc"/>
+              <path d="M134 425c81-10 119 18 192 18 69 0 100-20 190-12v13c0 18-16 33-36 33H169c-19 0-35-15-35-33v-19Z" fill="#f4efe7"/>
+              <path d="M152 340c10-23 31-37 55-37h236c27 0 47 13 59 37H152Z" fill="#faf8f2"/>
+              <path d="M167 341h318" stroke="#d8d2c8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/>
+              <rect x="179" y="255" width="296" height="85" rx="20" fill="url(#rose)"/>
+              <path d="M195 271c71 9 128 10 196-1 26-4 49-4 68-1v29c-43-6-72 1-108 4-56 5-95 0-156-3v-28Z" fill="#d99a8d" opacity=".62"/>
+              <path d="M190 314c90-5 167 12 273-2" stroke="#f6ddd3" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".9"/>
+              <rect x="217" y="185" width="222" height="70" rx="19" fill="#fffefa"/>
+              <path d="M234 201c53 8 110 9 188-2v23c-64 2-123 13-188 4v-25Z" fill="#e8e4dc"/>
+              <path d="M232 239h192" stroke="#d8d2c8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/>
+              <path d="M255 183c16-18 35-27 57-27h54c20 0 39 10 53 29" fill="none" stroke="#d4cec2" stroke-width="3"/>
+            </g>
+            <g fill="none" stroke="#fffefa" stroke-width="2" stroke-linecap="round" opacity=".9">
+              <path d="M488 136v21m-10.5-10.5h21"/><path d="M148 191v14m-7-7h14"/>
+            </g>
+            <circle cx="491" cy="184" r="3" fill="#fffefa"/>
+            <circle cx="131" cy="231" r="2.5" fill="#fffefa"/>
+            <path d="M78 125c10 0 18 8 18 18M78 125c0 10-8 18-18 18" fill="none" stroke="#a84d4a" stroke-width="1.5" opacity=".55"/>
+            <text x="72" y="97" fill="#51615a" font-family="Georgia,serif" font-size="12" letter-spacing="3">УХОД С ВНИМАНИЕМ</text>
+          </svg>
+          <div class="art-note">
+            <span class="art-note-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 14.7 9l6.3.7-4.7 4.3 1.3 6.2-5.6-3.2-5.6 3.2 1.3-6.2L3 9.7 9.3 9 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+            <span><strong>Каждой вещи — свой уход</strong><span>ОДЕЖДА · ТЕКСТИЛЬ · ДЕЛИКАТНЫЕ ИЗДЕЛИЯ</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">Наши услуги</span>
+            <h2>Чистота для вещей, которые вам дороги</h2>
+          </div>
+          <p class="section-intro">От повседневной одежды до домашнего текстиля — подскажем подходящий вид чистки и стирки.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 4 4 2 4-2 4 2 2 4-3 1v9H5v-9l-3-1 2-4 4-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m8 4 1 5 3 2 3-2 1-5M12 11v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+            <h3>Верхняя одежда</h3>
+            <p>Костюмы, пальто, платья и другие вещи гардероба.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16M6 4v16m12-16v16M4 20h16M6 7h12M6 10h12M6 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h3>Шторы и текстиль</h3>
+            <p>Шторы, тюль, покрывала и дивандеки.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c2 2.8 5.2 5.7 5.2 10a5.2 5.2 0 0 1-10.4 0C6.8 8.7 10 5.8 12 3Z" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 14.4c.2 1.3 1.1 2.1 2.5 2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h3>Мех и деликатные вещи</h3>
+            <p>Химчистка меховых изделий и ручная стирка деликатных вещей.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v7H4v-7ZM7 9V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3M4 15h16M7 18v2m10-2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Постельные вещи</h3>
+            <p>Стирка постельных принадлежностей и мягких игрушек.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c2.2 3 5.7 6.2 5.7 10.4a5.7 5.7 0 0 1-11.4 0C6.3 9.2 9.8 6 12 3Z" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 14.4c.2 1.4 1.1 2.2 2.5 2.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <h3>Аквачистка</h3>
+            <p>Подушки, одеяла, чехлы и коврики для ванной.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13.5c0-3 3.6-5.5 8-5.5s8 2.5 8 5.5v3c0 1.4-1.1 2.5-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-3Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 11v7m4-8v8m4-7v7M4 14h16" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+            <h3>Глажка и экспресс-услуги</h3>
+            <p>Доступны дополнительно — детали можно уточнить по телефону.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="care" id="care">
+      <div class="wrap care-grid">
+        <div class="care-heading">
+          <span class="eyebrow">Бережный подход</span>
+          <h2>Забота начинается с внимания к ткани</h2>
+          <p>Расскажите, что нужно почистить, — поможем сориентироваться по услуге и ответим на вопросы.</p>
+        </div>
+        <div class="care-list">
+          <div class="care-row">
+            <span class="care-num">01</span><div><strong>Одежда на каждый день</strong><p>Костюмы, пальто и платья — химчистка верхней одежды.</p></div>
+          </div>
+          <div class="care-row">
+            <span class="care-num">02</span><div><strong>Домашний уют</strong><p>Шторы, тюль, покрывала, подушки и другие текстильные вещи.</p></div>
+          </div>
+          <div class="care-row">
+            <span class="care-num">03</span><div><strong>Особенно деликатные изделия</strong><p>Меховые вещи и изделия, которым нужна ручная стирка.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contacts">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="contact-text">
+            <span class="eyebrow">Мы на связи</span>
+            <h2>Нужна подсказка по уходу?</h2>
+            <p>Позвоните или напишите — обсудим вашу вещь и услугу.</p>
+          </div>
+          <a class="button" href="https://wa.me/77052473327" target="_blank" rel="noopener noreferrer">
+            Написать в WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <span class="brand-mark" aria-hidden="true">P.</span>
+            <span><span class="brand-name">PARIS 127</span><span class="brand-sub">химчистка · прачечная</span></span>
+          </a>
+          <p>Бережный уход за одеждой и домашним текстилем.</p>
+        </div>
+        <div class="footer-links" aria-label="Контакты и социальные сети">
+          <a href="tel:+77052473327">Позвонить</a>
+          <a href="https://wa.me/77052473327" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.instagram.com/paris127_almaty/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+      <div class="legal">
+        <strong>КИМ ИП</strong><br>
+        Республика Казахстан, Минусинская 37Б квартира 36<br>
+        тел.: <a href="tel:+77052473327">+77052473327</a>
+      </div>
+      <div class="copyright">PARIS 127 · ХИМЧИСТКА И ПРАЧЕЧНАЯ</div>
+    </div>
+  </footer>
+</body>
+</html>
+
